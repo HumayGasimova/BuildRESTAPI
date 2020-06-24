@@ -10,7 +10,28 @@ app.get('/api/courses', (req, res) => {
 });
 
 app.get('/api/courses/:id', (req, res) => {
-    res.send(req.params.id);
+    res.send(req.params);
+});
+
+app.get('/api/posts', (req, res) => {
+    res.send(
+        [
+            {
+                year: 2018,
+                month: 1
+            },
+            {
+                year: 2018,
+                month: 2
+            },
+        ]
+        
+
+    );
+});
+
+app.get('/api/posts/:year/:month', (req, res) => {
+    res.send(req.params);
 });
 
 //PORT
