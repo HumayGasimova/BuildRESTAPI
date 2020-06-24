@@ -18,11 +18,23 @@ app.get('/api/posts', (req, res) => {
         [
             {
                 year: 2018,
-                month: 1
+                month: 1,
+                key: 1
             },
             {
                 year: 2018,
-                month: 2
+                month: 1,
+                key: 2
+            },
+            {
+                year: 2018,
+                month: 3,
+                key: 3
+            },
+            {
+                year: 2018,
+                month: 4,
+                key: 4
             },
         ]
         
@@ -30,8 +42,13 @@ app.get('/api/posts', (req, res) => {
     );
 });
 
+// app.get('/api/posts/:year/:month', (req, res) => {
+//     res.send(req.params);
+// });
+
 app.get('/api/posts/:year/:month', (req, res) => {
-    res.send(req.params);
+    res.send(req.query);
+    // http://localhost:3000/api/posts/2018/4?sortBy=name
 });
 
 //PORT
